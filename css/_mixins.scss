@@ -1,0 +1,15 @@
+@mixin prefix($pro, $value, $prefixes: ())
+{
+  @each $prfix in $prefixes {
+    #{'-' + $prfix + '-' + $pro}: $value;
+  }
+  #{$pro}: $value;
+}
+
+@each $social, $color in (f #3b5998),(t #1da1f2),(l #0077b5),(i #405de6),(p #833ab4) {
+  .#{$social}{
+    &:hover{
+      color:$color;
+    }
+  }
+}

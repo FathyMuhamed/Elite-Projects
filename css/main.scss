@@ -1,0 +1,681 @@
+$mainColor: #ec1c23;
+$secondaryColor: #08526d;
+$textColor: #9ea0a1;
+@import "mixins";
+@import "loading";
+
+body {
+  font-family: "Lato", sans-serif;
+  overflow: hidden;
+}
+// Start upper Bar
+.upper-bar {
+  background-color: $secondaryColor;
+  overflow: hidden;
+  color: white;
+  padding: 15px;
+  span {
+    color: $textColor;
+  }
+  .get-quote {
+    display: inline-block;
+    border: 1px solid $mainColor;
+    padding: 2px 25px;
+    margin-left: 20px;
+  }
+}
+// End upper Bar
+
+// Start navbar
+.navbar-light {
+  overflow: hidden;
+  .navbar-brand {
+    & > span {
+      font-size: 30px;
+    }
+    span:first-child {
+      color: $secondaryColor;
+      font-weight: bold;
+    }
+    span:last-child {
+      color: $mainColor;
+    }
+  }
+  .navbar-nav {
+    .nav-link {
+      color: $secondaryColor;
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-left: 20px;
+      font-weight: bold;
+      padding: 10px;
+    }
+    & .active > .nav-link {
+      color: $mainColor;
+    }
+  }
+}
+// End navbar
+
+// Start slider
+
+.slider {
+  overflow: hidden;
+  background-color: $secondaryColor;
+  li {
+    height: 5px;
+    &.active {
+      background-color: $mainColor;
+    }
+  }
+  .carousel-inner {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    h2 {
+      position: absolute;
+      color: #fff;
+      z-index: 3;
+      font-size: 60px;
+      left: 100px;
+      max-width: 780px;
+      line-height: 1.5;
+      span {
+        background-color: $mainColor;
+        color: #fff;
+      }
+    }
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 2;
+    }
+  }
+  .carousel-item {
+    @include prefix(background-size, cover, webkit moz o);
+  }
+  .carousel-one {
+    background-image: url("../image/banner.jpg");
+  }
+  .carousel-two {
+    background-color: $secondaryColor;
+  }
+  .carousel-three {
+    background-image: url("../image/banner2.jpg");
+  }
+}
+// End slider
+
+// Start features
+.features {
+  padding: 50px 0;
+  overflow: hidden;
+  i {
+    background-color: $mainColor;
+    color: #fff;
+    line-height: 60px;
+    margin-bottom: 20px;
+    width: 60px;
+    height: 60px;
+  }
+  h2 {
+    color: $secondaryColor;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  p {
+    color: $textColor;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+}
+// End features
+
+// Start overview
+.overview {
+  overflow: hidden;
+  padding: 90px 0;
+  background-color: #f0f5f7;
+  h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+  p {
+    width: 78%;
+    font-size: 18px;
+    margin: 0 auto 20px;
+    color: $textColor;
+    line-height: 1.6;
+  }
+  h4 {
+    color: $textColor;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+    font-size: 18px;
+  }
+  button {
+    color: #fff;
+    background-color: $mainColor;
+    padding: 7px 30px;
+    border: 1px solid $mainColor;
+  }
+}
+
+// End overview
+
+// Start Featured Work
+.featured-work {
+  overflow: hidden;
+  padding: 100px 0 80px;
+  h2 {
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+  p {
+    width: 78%;
+    font-size: 18px;
+    margin: 0 auto 20px;
+    color: $textColor;
+    line-height: 1.6;
+  }
+  ul {
+    margin-top: 35px;
+    li {
+      border: 2px solid $secondaryColor;
+      color: $secondaryColor;
+      font-weight: bold;
+      padding: 10px 12px;
+      font-size: 18px;
+      margin-left: 10px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      @include prefix(transition, all 0.3s ease-in-out, webkit moz o);
+      &.active {
+        background-color: $mainColor;
+        color: #fff;
+        border: 2px solid $mainColor;
+      }
+      &:hover {
+        border: 2px solid $mainColor;
+        color: $mainColor;
+        cursor: pointer;
+      }
+    }
+  }
+  .portfolio {
+    overflow: hidden;
+    .row {
+      margin: 0;
+      .col-md {
+        background-color: rgb(82, 79, 79);
+        padding: 0;
+        position: relative;
+        color: #fff;
+        @include prefix(transition, all 0.6s ease-in-out, webkit moz o);
+        span {
+          position: absolute;
+          background-color: $mainColor;
+          transition: 0.3s;
+        }
+        .one {
+          top: 0;
+          left: 0;
+          width: 3px;
+          height: 0;
+        }
+        .two {
+          bottom: 0;
+          left: 0;
+          height: 3px;
+          width: 0;
+        }
+        .three {
+          right: 0;
+          bottom: 0;
+          width: 3px;
+          height: 0;
+        }
+        .four {
+          top: 0;
+          right: 0;
+          height: 3px;
+          width: 0;
+        }
+        &:hover {
+          .one,
+          .three {
+            height: 100%;
+          }
+          .two,
+          .four {
+            width: 100%;
+          }
+        }
+      }
+      img {
+        width: 100%;
+      }
+      h3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        z-index: 3;
+        transform: translate(-47%, -50%);
+        font: {
+          size: 30px;
+          weight: 900;
+        }
+      }
+      .effect {
+        &:hover {
+          img {
+            opacity: 0.2;
+            transition-duration: 0.3s;
+            transition-delay: 0.3s;
+          }
+          h3 {
+            opacity: 1;
+            transition-duration: 0.4s;
+            transition-delay: 0.5s;
+          }
+        }
+      }
+    }
+  }
+}
+
+// End Featured Work
+
+// Start lastest-post
+.lastest-post {
+  overflow: hidden;
+  padding: 0 0 90px;
+  .lastest-post-header {
+    h2 {
+      font-size: 40px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+    }
+    p {
+      width: 78%;
+      font-size: 18px;
+      margin: 0 auto 20px;
+      color: $textColor;
+      line-height: 1.6;
+    }
+  }
+
+  .card {
+    border: none;
+    margin-bottom: 25px;
+    .card-body {
+      padding: 0;
+      h5 {
+        color: $secondaryColor;
+        font-weight: 600;
+        font-size: 19px;
+        margin-top: 10px;
+        line-height: 1.5;
+      }
+      h6 {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      p {
+        color: $textColor;
+      }
+      a {
+        color: $mainColor;
+        font-weight: bold;
+      }
+    }
+  }
+}
+// End lastest-post
+
+// Start testimonial
+.testimonial {
+  overflow: hidden;
+  background: url("../image/testimonial.jpg");
+  @include prefix(background-size, cover, webkit moz o);
+  position: relative;
+
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+  }
+  li {
+    height: 5px;
+    &.active {
+      background-color: $mainColor;
+    }
+  }
+  .carousel-caption {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    margin-top: -158px;
+
+    h5 {
+      margin-top: 20px;
+      margin-bottom: 0px;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+    span {
+      font-size: 14px;
+    }
+    p {
+      margin: 40px auto 0;
+      width: 76%;
+      line-height: 1.6;
+    }
+  }
+  a {
+    position: absolute;
+    z-index: 5;
+  }
+}
+// End testimonial
+
+// Start pricing
+.pricing {
+  overflow: hidden;
+  padding: 90px 0;
+  background-color: #f7efef;
+  .pricing-header {
+    h2 {
+      font-size: 40px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+    }
+    p {
+      width: 78%;
+      font-size: 18px;
+      margin: 0 auto 20px;
+      color: $textColor;
+      line-height: 1.6;
+      margin-bottom: 80px;
+    }
+  }
+
+  .card {
+    border: none;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    padding: 0;
+
+    .card-body {
+      padding: 0;
+      h5 {
+        color: $secondaryColor;
+        font-weight: bold;
+        font-size: 25px;
+        margin-top: 30px;
+        line-height: 1.5;
+      }
+      h6 {
+        font-size: 14px;
+        font-weight: 600;
+        padding-bottom: 30px;
+      }
+      p {
+        padding: 10px;
+        font-size: 33px;
+        background-color: #f7efef;
+        color: $secondaryColor;
+        margin-bottom: 0;
+        font-weight: bold;
+        span {
+          text-transform: uppercase;
+          font-size: 15px;
+        }
+      }
+      .list-group-item {
+        border: 0;
+        color: $textColor;
+        padding: 20px;
+      }
+      a {
+        display: inline-block;
+        color: $mainColor;
+        font-weight: bold;
+        text-transform: uppercase;
+        background: $mainColor;
+        color: #fff;
+        padding: 9px 20px;
+        margin-bottom: 50px;
+        letter-spacing: 2px;
+        font-size: 18px;
+      }
+    }
+  }
+  .Corporate {
+    overflow: hidden;
+    position: relative;
+    top: -20px;
+    .card-body {
+      p {
+        color: #fff;
+        background-color: $mainColor;
+      }
+      a {
+        background-color: $secondaryColor;
+      }
+    }
+  }
+}
+// End pricing
+
+//Start why choose-us
+.choose-us {
+  overflow: hidden;
+  color: #fff;
+  .col-6 {
+    padding: 0;
+  }
+  img {
+    max-width: 100%;
+    padding: 0;
+  }
+  .col-6:last-child {
+    background-color: $secondaryColor;
+    width: 100%;
+  }
+  .choose-us-text {
+    margin: 50px 50px;
+    h2 {
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    p {
+      line-height: 1.8;
+      font-size: 16px;
+      margin-bottom: 20px;
+      padding-right: 117px;
+    }
+    a {
+      color: #fff;
+      background-color: $mainColor;
+      padding: 8px 12px;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+  }
+}
+//End why choose-us
+
+// Start achevement
+.achevement {
+  padding: 90px 0;
+  overflow: hidden;
+  color: $secondaryColor;
+  span {
+    display: block;
+    font-size: 33px;
+    margin-top: 5px;
+    font-weight: 900;
+  }
+  p {
+    font-style: italic;
+    color: $mainColor;
+    margin-bottom: 25px;
+  }
+}
+// End achevement
+
+// Start contact us
+.contact-us {
+  padding: 60px 0;
+  overflow: hidden;
+  background-color: $mainColor;
+  color: #fff;
+  p {
+    font-size: 30px;
+    font-weight: lighter;
+    margin: 0;
+  }
+  a {
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: 2px solid #fff;
+    padding: 8px 10px;
+    &:hover {
+      background-color: $secondaryColor;
+      text-decoration: none;
+    }
+  }
+}
+// End contact us
+
+// Start contact
+.contact {
+  overflow: hidden;
+  padding: 100px 0;
+  .main-contact {
+    h2 {
+      margin-bottom: 40px;
+      & > span {
+        font-size: 36px;
+      }
+      span:first-child {
+        color: $secondaryColor;
+        font-weight: 900;
+      }
+      span:last-child {
+        color: $mainColor;
+      }
+    }
+    a {
+      color: $secondaryColor;
+      font-weight: bold;
+      &:before {
+        display: inline-block;
+        font-family: "Font Awesome 5 Free";
+        content: "\f138";
+        font-weight: 900;
+        margin-right: 5px;
+      }
+    }
+
+    p {
+      color: $textColor;
+      line-height: 1.7;
+      font-size: 16px;
+      margin: 5px;
+    }
+  }
+  .helpful-links {
+    h3 {
+      overflow: hidden;
+      color: $secondaryColor;
+      margin-bottom: 49px;
+    }
+    ul {
+      li {
+        margin-bottom: 3px;
+        font-size: 15px;
+        &:before {
+          display: inline-block;
+          font-family: "Font Awesome 5 Free";
+          content: "\f105";
+          font-weight: 900;
+          margin-right: 5px;
+          color: $secondaryColor;
+        }
+        a {
+          color: $secondaryColor;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .info-me {
+    h3 {
+      overflow: hidden;
+      color: $secondaryColor;
+      margin-bottom: 49px;
+    }
+    ul {
+      li {
+        color: $textColor;
+        font-weight: bold;
+        font-size: 17px;
+        margin-bottom: 20px;
+        a {
+          color: $secondaryColor;
+        }
+      }
+    }
+  }
+}
+// End contact
+
+// Start footer
+footer {
+  overflow: hidden;
+  padding: 30px 0 20px;
+  border-top: 1px solid $textColor;
+  h6 {
+    color: $textColor;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  ul {
+    li {
+      display: inline-block;
+      a {
+        margin-left: 25px;
+        color: $textColor;
+        font-size: 18px;
+      }
+    }
+  }
+}
+// End footer
